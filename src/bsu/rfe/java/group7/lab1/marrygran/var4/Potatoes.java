@@ -12,18 +12,15 @@ public class Potatoes extends Food{
         System.out.println(this + " съедено");
     }
 
-    public String getType()
-    {
+    public String getType(){
         return type;
     }
 
-    public void setType(String type)
-    {
+    public void setType(String type){
         this.type = type;
     }
 
-    public String toString()
-    {
+    public String toString() {
         return super.toString() + " вида " + type.toUpperCase() + "'";
     }
 }
