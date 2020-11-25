@@ -75,7 +75,7 @@ public class MainFrame extends JFrame {
             textFieldZ.setMaximumSize(textFieldZ.getPreferredSize());
             Box hboxVariables = Box.createHorizontalBox();
             hboxVariables.setBorder(
-                    BorderFactory.createLineBorder(Color.RED));
+                    BorderFactory.createLineBorder(Color.ORANGE));
             hboxVariables.add(labelForX);
             hboxVariables.add(Box.createHorizontalStrut(10));
             hboxVariables.add(textFieldX);
@@ -103,7 +103,7 @@ public class MainFrame extends JFrame {
             hboxResult.add(Box.createHorizontalStrut(10));
             hboxResult.add(textFieldResult);
             hboxResult.add(Box.createHorizontalGlue());
-            hboxResult.setBorder(BorderFactory.createLineBorder(Color.BLUE));
+            hboxResult.setBorder(BorderFactory.createLineBorder(Color.YELLOW));
             // Создать область для кнопок
             JButton buttonCalc = new JButton("Вычислить");
             //Добавление события нажатия кнопки buttonCalc
@@ -165,6 +165,7 @@ public class MainFrame extends JFrame {
             hboxButtons.add(MPlus);
             hboxButtons.add(Box.createHorizontalGlue());
             hboxButtons.setBorder(BorderFactory.createLineBorder(Color.GREEN));
+
             //Связать области воедино в компоновке BoxLayout
             Box contentBox = Box.createVerticalBox();
             contentBox.add(Box.createVerticalGlue());
