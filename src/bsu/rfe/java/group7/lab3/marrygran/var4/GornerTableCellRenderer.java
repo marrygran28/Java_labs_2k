@@ -34,9 +34,9 @@ public class GornerTableCellRenderer implements TableCellRenderer {
     }
     public Component getTableCellRendererComponent(JTable table,
                                                    Object value, boolean isSelected, boolean hasFocus, int row, int col) {
-// Преобразовать double в строку с помощью форматировщика
+        // Преобразовать double в строку с помощью форматировщика
         String formattedDouble = formatter.format(value);
-// Установить текст надписи равным строковому представлению числа
+        // Установить текст надписи равным строковому представлению числа
         label.setText(formattedDouble);
 
         if (col==1 && needle!=null && needle.equals(formattedDouble)) {
