@@ -46,6 +46,8 @@ public class MainFrame extends JFrame {
     private JMenuItem saveToTextMenuItem;
     private JMenuItem saveToGraphicsMenuItem;
     private JMenuItem searchValueMenuItem;
+    private JMenuItem infoMenuItem;
+
     // Поля ввода для считывания значений переменных
     private JTextField textFieldFrom;
     private JTextField textFieldTo;
@@ -79,8 +81,22 @@ public class MainFrame extends JFrame {
         JMenu tableMenu = new JMenu("Таблица");
 // Добавить его в главное меню
         menuBar.add(tableMenu);
-// Создать новое "действие" по сохранению в текстовый файл
+        JMenu helpMenu = new JMenu("Справка");
+        menuBar.add(helpMenu);
 
+        Action helpDialogWindowAction = new AbstractAction("О программе") {
+            public void actionPerformed(ActionEvent event) {
+// Показать диалоговое окно
+                    JOptionPane.showMessageDialog(MainFrame.this, "Гранковская Мария, 7 группа");
+                }
+        };
+
+        // Добавить соответствующий пункт подменю в меню "Справка"
+       infoMenuItem = helpMenu.add(helpDialogWindowAction);
+    // По умолчанию пункт меню является доступным
+        infoMenuItem.setEnabled(true);
+
+        // Создать новое "действие" по сохранению в текстовый файл
         Action saveToTextAction = new AbstractAction("Сохранить в текстовый файл") {
             public void actionPerformed(ActionEvent event) {
                 if (fileChooser==null) {
@@ -127,7 +143,7 @@ public class MainFrame extends JFrame {
 // По умолчанию пункт меню является недоступным(данных ещѐ нет)
         saveToGraphicsMenuItem.setEnabled(false);
 // Создать новое действие по поиску значений многочлена
-        Action searchValueAction = new AbstractAction("Найти значение многочлена") {
+        Action searchValueAction = new AbstractAction("Найти значение X") {
             public void actionPerformed(ActionEvent event) {
 // Запросить пользователя ввести искомую строку
                 String value =
